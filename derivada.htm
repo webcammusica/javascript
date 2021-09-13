@@ -1,0 +1,87 @@
+<html>
+
+ <head>
+
+     <title>derivada</title>
+
+     <script >
+
+       function rd(x)
+
+         {  return Math.round(1000*x)/1000   }
+
+       function computar()       
+
+         {    var xa=eval(document.funcion.a.value) , fx=document.funcion.f.value,
+
+                   dfx=document.funcion.df.value,             dx=Number(document.funcion.dx.value);
+
+                   x=xa ;  fa=eval(fx)  ;  dfa=eval(dfx)  ;  ix=dx/10;
+
+           for(i=0 ; i <10; i++)
+
+            { 
+
+               x=rd(xa-dx+ix*i) ;xi=x;fi=rd(eval(fx));
+
+               x=rd(xa+dx-ix*i) ;xd=x;fd=rd(eval(fx));
+
+             tvmi=rd((fa-fi)/(xa-xi));tvmd=rd((fd-fa)/(xd-xa));
+
+               document.funcion[3*i+5].value=rd(dx-ix*i);  
+
+               document.funcion[3*i+6].value=tvmi;
+
+               document.funcion[3*i+7].value=tvmd;
+
+              }  
+
+             document.funcion.dfa.value=dfa 
+
+         }
+
+      </script>
+
+  </head>
+
+<body bgcolor=cyan>
+
+  <form name="funcion">
+
+f  (x)= <input type="text" name="f"size=25> a=<input type="text" name="a" size=1><BR>
+
+f '(x)=<input type="text" name="df"size=25> i =<input type="text" name="dx" size=1>
+
+<input type="button" value="Calcular" OnClick="computar()"><BR>
+
+Intervalo.…...izq.(a-i,a).......dcha.(a,a+i)<BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+
+f '(a) = <input type="text" name="dfa" size=3>
+
+  </form>
+
+</body>
+
+</html>
+
+ 

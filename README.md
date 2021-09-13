@@ -1,0 +1,2 @@
+# javascript
+ Derivada por aproximaciones.
