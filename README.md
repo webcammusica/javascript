@@ -4,7 +4,7 @@ Derivada por aproximaciones.
 
 Si solo estás aprendiendo derivadas fíjate en cómo convergen los límites derecho e izquierdo. 
 
-Ya tiene algunos comentarios si te interesan las derivadas y JavaScript.
+Ya tiene algunos comentarios por si te interesan las derivadas y JavaScript.
 
 Referencias:
 
