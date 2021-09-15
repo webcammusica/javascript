@@ -1,87 +1,83 @@
 <html>
-
- <head>
-
-     <title>derivada</title>
-
-     <script >
-
-       function rd(x)
-
+   <head>
+      <title>derivada</title>
+      <script >
+         <!-- Esta función redondea a 3 decimales. -->
+         <!-- Es invocada por la función "computar()". -->
+         <!-- "rd" es invocada por la función "computar()". -->
+         function rd(x)
          {  return Math.round(1000*x)/1000   }
+         <!-- "computar" es la función que calcula la derivada. -->
+         function computar()
+         {
+           <!-- Asigna a variables JavaScript los valores que toma de la interfaz gráfica HTML -->
+           var
+           <!-- "funcion" es el nombre del "form" HTML -->
+           <!-- xa toma el valor del campo de entrada "a"->
+           <!-- Esta es la variable independiente->
+           <!-- mediante "eval" lo convierte en numérico -->
+           <!-- En el ejemplo: 1-->
+           xa=eval(document.funcion.a.value),
+           <!-- fx toma el valor del campo de entrada "f" o de la función-->
+           <!-- En el ejemplo: "3*x*x*x-4*x+5"-->
+           fx=document.funcion.f.value,
+           <!-- dfx toma el valor del campo de entrada "df" o de la función derivada-->
+           <!-- En el ejemplo: "9*x*x-4"-->
+           dfx=document.funcion.df.value,
+           <!-- dx toma el valor del campo de entrada "dx" o del incremento-->
+           <!-- En el ejemplo: "0.1"-->
+           dx=Number(document.funcion.dx.value);
 
-       function computar()       
+           <!-- Se hace x=1 y se resuelven las ecuaciones mediante "eval"-->
+           <!-- ix es el incremento original dividido entre 10-->
+           <!-- En el ejemplo da: 0.1/10 = 0.01-->
+           x=xa ;  fa=eval(fx)  ;  dfa=eval(dfx)  ;  ix=dx/10;
 
-         {    var xa=eval(document.funcion.a.value) , fx=document.funcion.f.value,
-
-                   dfx=document.funcion.df.value,             dx=Number(document.funcion.dx.value);
-
-                   x=xa ;  fa=eval(fx)  ;  dfa=eval(dfx)  ;  ix=dx/10;
-
+         <!-- Est ciclo for itera 10 veces, i=0, luego i=2... hasta i=9-->
            for(i=0 ; i <10; i++)
 
-            { 
+           {
+         <!-- Primero se calcula la diferencia entre f(a) = f (1)
+         y el incremento más ix multiplicado po el iterador i del for-->
+             x=rd(xa-dx+ix*i)
+             <!-- Pronto agregaré más comentarios...-->
+             ;xi=x;fi=rd(eval(fx));
 
-               x=rd(xa-dx+ix*i) ;xi=x;fi=rd(eval(fx));
-
-               x=rd(xa+dx-ix*i) ;xd=x;fd=rd(eval(fx));
+             x=rd(xa+dx-ix*i) ;xd=x;fd=rd(eval(fx));
 
              tvmi=rd((fa-fi)/(xa-xi));tvmd=rd((fd-fa)/(xd-xa));
 
-               document.funcion[3*i+5].value=rd(dx-ix*i);  
+             document.funcion[3*i+5].value=rd(dx-ix*i);
 
-               document.funcion[3*i+6].value=tvmi;
+             document.funcion[3*i+6].value=tvmi;
 
-               document.funcion[3*i+7].value=tvmd;
+             document.funcion[3*i+7].value=tvmd;
 
-              }  
+           }
 
-             document.funcion.dfa.value=dfa 
+           document.funcion.dfa.value=dfa
 
          }
 
       </script>
-
-  </head>
-
-<body bgcolor=cyan>
-
-  <form name="funcion">
-
-f  (x)= <input type="text" name="f"size=25> a=<input type="text" name="a" size=1><BR>
-
-f '(x)=<input type="text" name="df"size=25> i =<input type="text" name="dx" size=1>
-
-<input type="button" value="Calcular" OnClick="computar()"><BR>
-
-Intervalo.…...izq.(a-i,a).......dcha.(a,a+i)<BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-
-f '(a) = <input type="text" name="dfa" size=3>
-
-  </form>
-
-</body>
-
+   </head>
+   <body bgcolor=cyan>
+      <form name="funcion">
+         f  (x)= <input type="text" name="f"size=25> a=<input type="text" name="a" size=1><BR>
+         f '(x)=<input type="text" name="df"size=25> i =<input type="text" name="dx" size=1>
+         <input type="button" value="Calcular" OnClick="computar()"><BR>
+         Intervalo.…...izq.(a-i,a).......dcha.(a,a+i)<BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
+         f '(a) = <input type="text" name="dfa" size=3>
+      </form>
+   </body>
 </html>
-
- 
