@@ -3,8 +3,10 @@
 Para desarrollar estos ejercicios recomiendo https://www.sublimetext.com/, porque te permite identar 
 tu código HTML para que se vea ordenado y por ende bonito.
 
+------------------------------------------------------------------------------------------------------
 1. Derivada por aproximaciones iterativas por la derecha y la izquierda de la variable independiente.
 ------------------------------------------------------------------------------------------------------
+
 Si solo estás aprendiendo derivadas fíjate en cómo convergen los límites derecho e izquierdo. 
 
 Aún sin conocer la fórmula de la derivada se calcula su valor mediante aproximaciones iterativas.
