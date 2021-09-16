@@ -4,7 +4,7 @@ Derivada por aproximaciones.
 
 Si solo estás aprendiendo derivadas fíjate en cómo convergen los límites derecho e izquierdo. 
 
-Aún sin conocer la fórmula de la derivada se calcula su valor mediante aproximaciones iterativas..
+Aún sin conocer la fórmula de la derivada se calcula su valor mediante aproximaciones iterativas.
 
 Referencias:
 
