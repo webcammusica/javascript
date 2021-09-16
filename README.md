@@ -6,6 +6,8 @@ Si solo estás aprendiendo derivadas fíjate en cómo convergen los límites der
 
 Aún sin conocer la fórmula de la derivada se calcula su valor mediante aproximaciones iterativas.
 
+Pronto trataré de entenderlo mejor.
+
 Referencias:
 
 -El código original:
