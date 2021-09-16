@@ -1,6 +1,6 @@
 # javascript
 
-Derivada por aproximaciones.
+Derivada por aproximaciones iterativas por la derecha y la izquierda de la variable independiente.
 
 Si solo estás aprendiendo derivadas fíjate en cómo convergen los límites derecho e izquierdo. 
 
