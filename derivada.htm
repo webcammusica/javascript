@@ -2,16 +2,16 @@
 <head>
   <title>Derivada por aproximaciones calculadas iterativamente</title>
   <script >
-     /* Esta función redondea a 3 decimales. */
-     /* "rd" es invocada por la función "computar()". */
-     function rd(x)
-     {  return Math.round(1000*x)/1000   }
-     /* "computar" es la función que calcula la derivada. */
-     function computar()
-     {
-       /* Asigna a variables JavaScript los valores que toma de la interfaz gráfica HTML */
-       var
-       /* "funcion" es el nombre del "form" HTML */
+   /* Esta función redondea a 3 decimales. */
+   /* "rd" es invocada por la función "computar()". */
+   function rd(x)
+   {  return Math.round(1000*x)/1000   }
+   /* "computar" es la función que calcula la derivada. */
+   function computar()
+   {
+     /* Asigna a variables JavaScript los valores que toma de la interfaz gráfica HTML */
+     var
+     /* "funcion" es el nombre del "form" HTML */
        /* xa toma el valor del campo de entrada "a"->
        /* Esta es la variable independiente->
        /* mediante "eval" lo convierte en numérico */
@@ -32,7 +32,7 @@
        /* En el ejemplo da: 0.1/10 = 0.01*/
        x=xa ;  fa=eval(fx)  ;  dfa=eval(dfx)  ;  ix=dx/10;
 
-     /* Est ciclo for itera 10 veces, i=0, luego i=2... hasta i=9*/
+       /* Est ciclo for itera 10 veces, i=0, luego i=2... hasta i=9*/
        for(i=0 ; i <10; i++)
 
        {
@@ -40,13 +40,14 @@
      y el incremento "dx" = 0.1 más ix = 0.01 multiplicado po el iterador i del for
      en nuestro ejemplo: 1-0.1+0.01*0, luego, 1-0.1+0.01*1, luego, 1-0.1+0.01*2... 
      en nuestro ejemplo: 0.9, luego, 0.91, luego, 0.92...este cálculo es el nuevo x */
-         x=rd(xa-dx+ix*i);
-         /* Se guarda x en una variable nueva variable llamada "xi" */
-         /* no se usa "var" porque es una variable local del for*/
-         xi=x;
-         /* Se calcula la función para el nuevo valor de x*/
-         /* Se guarda este cálculo en una variable nueva variable local llamada "fi"-*/
-         fi=rd(eval(fx));
+     x=rd(xa-dx+ix*i);
+     /* Se guarda x en una variable nueva variable llamada "xi" */
+     /* no se usa "var" porque es una variable local del for*/
+     /*En nuestro ejemplo xi siempre es menor que 1, 1 - algo*/
+     xi=x;
+     /* Se calcula la función para el nuevo valor de x*/
+     /* Se guarda este cálculo en una variable nueva variable local llamada "fi"-*/
+     fi=rd(eval(fx));
      /* Ahora se calcula la diferencia entre xa que es = 1
      y el incremento "dx" = 0.1 menos (nótese la diferencia, en el límite izquierdo era "más")
      ix = 0.01 multiplicado po el iterador i del for
@@ -54,30 +55,46 @@
      en nuestro ejemplo: 0.9, luego, 0.89, luego, 0.88... este cálculo es el nuevo x */
      x=rd(xa+dx-ix*i);
      /* Se guarda x en una variable nueva variable llamada "xd"*/
-         /* no se usa "var" porque es una variable local del for*/
-         xd=x;
-         /* Se calcula la función para el nuevo valor de x*/
-         /* Se guarda este cálculo en una variable nueva variable local llamada "fd"-*/
-         fd=rd(eval(fx));
-         /* Se calcula la tasa de variación media izquierda*/
-         /* Se guarda este cálculo en una variable nueva variable local llamada "tvmi"-*/
-         tvmi=rd((fa-fi)/(xa-xi));
-         /* Se calcula la tasa de variación media derecha*/
-         /* Se guarda este cálculo en una variable nueva variable local llamada "tvmd"-*/
-         tvmd=rd((fd-fa)/(xd-xa));
-         /* Se mustran los resultados en el form a partir del quinto campo porque
-           los primeros 4 son los de las entradas*/
-         /* en la primera columna el resultado de 0.1-0.01*0=0.1, luego, 0.1-0.01*1=0.09-*/
-         document.funcion[3*i+5].value=rd(dx-ix*i);
-         /* en la segunda columna la tasa de variación media izquierda--*/
-         document.funcion[3*i+6].value=tvmi;
-         /* en la tercera columna la tasa de variación media derecha--*/
-         document.funcion[3*i+7].value=tvmd;
+     /* no se usa "var" porque es una variable local del for*/
+     /*En nuestro ejemplo xd siempre es mayor que 1, 1 + algo*/
+     xd=x;
+     /* Se calcula la función para el nuevo valor de x*/
+     /* Se guarda este cálculo en una variable nueva variable local llamada "fd"-*/
+     fd=rd(eval(fx));
+         /*  i es el incremento, fíjate que cada vez es más pequeño, para mayor precisión, más 
+         cercano al punto en cuestión: a=1=x, al final xi=0.09 y xd=1.01 */
+     /* i es el icremento, fíjate que cada vez es más pequeño, para mayor precisión, más 
+      cercano al punto en cuestión: a=1=x, al final xi=0.09 y xd=1.01 
+      en ellos calculamos la tasa media de variación izquierda y luego la derecha
+      "tvmi=rd((fa-fi)/(xa-xi));" y "tvmd=rd((fd-fa)/(xd-xa));" respectivamente.*/
+      /* La línea del script "document.funcion[3*i+6].value=tvmi;" se usa para calcular que cada tres
+        input a partir del 6 hay una "TVMI", algo análogo, similar,
+        se hace para "xi" y "TVMD" el cálculo del input donde se debe mostrar el resultado se puede
+         hacer por observación y análisis del ejemplo y es una tarea común del informático. 
+        Les cambié el nombre a los textos mostrados de "i" a "xi" y de "TVM" a "TVMI" y "TVMD"
+        para que se más entendible.*/
+        /* Se calcula la tasa de variación media izquierda*/
+        /* Se guarda este cálculo en una variable nueva variable local llamada "tvmi"-*/
+        tvmi=rd((fa-fi)/(xa-xi));
+        /* Se calcula la tasa de variación media derecha*/
+        /* Se guarda este cálculo en una variable nueva variable local llamada "tvmd"-*/
+        tvmd=rd((fd-fa)/(xd-xa));
+         /* Se muestran los resultados en el form a partir del quinto campo porque
+         los primeros 4 son los de las entradas*/
+        /*dx es el incremento que definimos,
+        ix es el resultado de dicidir el incremento sobre 10,
+        i es el iterador que va de 0 a 9*/
+        /* en la primera columna muestra el resultado de 0.1-0.01*0=0.1, luego, 0.1-0.01*1=0.09-*/
+        document.funcion[3*i+5].value=rd(dx-ix*i);
+        /* en la segunda columna la tasa de variación media izquierda--*/
+        document.funcion[3*i+6].value=tvmi;
+        /* en la tercera columna la tasa de variación media derecha--*/
+        document.funcion[3*i+7].value=tvmd;
 
-       }
-       /* Se muestra el resultado de "eval" de f prima de (a), f'(a)--*/
-       /* en nuestro ejemplo: 9*1*1-4=5--*/
-       document.funcion.dfa.value=dfa
+      }/*Acá termina el ciclo for*/
+      /* Se muestra el resultado de "eval" de f prima de (a), f'(a)--*/
+      /* en nuestro ejemplo: 9*1*1-4=5--*/
+      document.funcion.dfa.value=dfa
 
        /* Fíjate que las aproximaciones en las que no se usa f prima,
         y dfa que es el resultado de "eval" de f prima coinciden.
@@ -87,36 +104,43 @@
         notaremos un patrón, esta es una forma muy común en las matemáticas y
         ahora en la informática, de encontrar fórmulas.
         */
-     }
+      }
 
-  </script>
-</head>
-<!-- "body" es una etiqueta HMTL donde ubicamos el código que se verá en el navegador -->
-<body bgcolor=cyan>
-  <!-- "form" es una etiqueta HMTL que indica que hay un formulario-->
-  <form name="funcion">
-    <!-- "input" es una etiqueta HMTL que indica que hay una entrada-->
+    </script>
+  </head>
+  <!-- "body" es una etiqueta HMTL donde ubicamos el código que se verá en el navegador -->
+  <body bgcolor=cyan>
+    <!-- "form" es una etiqueta HMTL que indica que hay un formulario-->
+    <form name="funcion">
+      <!-- "input" es una etiqueta HMTL que indica que hay una entrada-->
     <!-- "type="text" es un tipo aplicado a "input" que indica el tipo de entrada
       , por ejemplo, texto o número "number" -->
-     f  (x)= <input type="text" name="f"size=25> a=<input type="text" name="a" size=1><BR>
-     f '(x)=<input type="text" name="df"size=25> i =<input type="text" name="dx" size=1>
+      f  (x)= <input type="text" name="f"size=25> a=<input type="text" name="a" size=1><BR>
+      f '(x)=<input type="text" name="df"size=25> i =<input type="text" name="dx" size=1>
       <!-- "type="button" es un tipo aplicado a "input" que indica el tipo de entrada
       es un botón, "value" es el nombre que se muestra en el navegador
       "OnClick" es lo que el botón hace al hacer clic sobre él -->
-     <input type="button" value="Calcular" OnClick="computar()"><BR>
-     Intervalo.…...izq.(a-i,a).......dcha.(a,a+i)<BR>
-      <!-- Luego comentaré el significado de estos input... --->
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     i=<input type="text" size=3>TVM=<input type="text" size=5>TVM=<input type="text" size=5><BR>
-     f '(a) = <input type="text" name="dfa" size=3>
-  </form>
-</body>
-</html>
+      <input type="button" value="Calcular" OnClick="computar()"><BR>
+      Intervalo.…...izq.(a-i,a).......dcha.(a,a+i)<BR>
+      
+ <!-- Aunque se llaman "input" también se usan para mostrar salidas, lo hacemos desde el script,
+  por ejemplo: document.funcion[3*i+5].value=rd(dx-ix*i); lo que está entre "[]" es 
+  el número del input de 1 en adelante, y value es lo que queremos que muestre. -->
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+      xi=<input type="text" size=3>TVMI=<input type="text" size=5>TVMD=<input type="text" size=5><BR>
+
+     <!-- Finalmente evaluamos la función derivada de las entradas que digitamos "9*x*x-4"
+      y vemos que coincide, especialmente en los xi y xd más pequeños al final.-->
+      f '(a) = <input type="text" name="dfa" size=3>
+    </form>
+  </body>
+  </html>
+<!-- Para más precisión ¿qué tal si ahora cambiamos i de 0.1 a 0.01? :)-->
