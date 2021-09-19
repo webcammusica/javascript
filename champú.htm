@@ -1,0 +1,57 @@
+<html>
+<head>
+  <title>Racionar agua</title>
+  <script>
+    function darDiaChampu()
+    {  
+
+      var inicio=document.formulario.start.value;
+      var fechaInicio = new Date(inicio).getTime();
+
+      var buscado=document.formulario.end.value;
+      var fechaBuscada = new Date(buscado).getTime();
+
+      var difMiliSeg = fechaBuscada - fechaInicio;
+
+      var dif = difMiliSeg/(1000*60*60*24);
+
+      if(dif == 0 || dif%4==0){
+        resultado = 1;
+      }else if (dif%2!=0){
+        resultado=3;
+      }else{
+        resultado=2;
+      }
+      document.formulario.resultado.value=resultado;
+
+
+    }
+
+
+
+  </script>
+</head>
+<!-- "body" es una etiqueta HMTL donde ubicamos el código que se verá en el navegador -->
+<body bgcolor=white onload="script();">
+  <!-- "form" es una etiqueta HMTL que indica que hay un formulario-->
+  <form name="formulario">
+    <p>El problema del costo del agua se soluciona mediante el racionamiento.</p>
+    <p>Una manera de logralo es mediante el ciclo, secuencia o serie: champú, aseo sin ducha,  ducha, aseo sin ducha, champú.</p>
+    <p>Asignándoles números: 1, 3,  2, 3, 1.</p>
+    
+    <label for="start">Día inicial tipo 1 o champú:</label>
+    <!-- En este caso iniciamos el 19 de julio de 2021-->
+    <input type="date" id="start" name="inicioDeAseo"
+    value="2021-07-19">
+
+    <label for="end">Día buscado:</label>
+    <input type="date" id="end" name="diaConsultado"
+    value="2021-09-18">
+
+    <input type="button" value="Calcular" OnClick="darDiaChampu()"><BR>
+
+    Tipo de aseo para el día buscado=<input type="text" size=10 id="resultado"> 
+  </form>
+</body>
+</html>
+<!-- Luego lo comentaré, si notas que falla ten paciencia, es una versión sin revisar a fondo-->
