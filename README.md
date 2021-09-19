@@ -38,4 +38,4 @@ champú.htm
 
 Ahorra agua y dúchate menos sin ser desaseado, funciona mejor en casa, si sales y caminas mucho mejor báñate todos los días bien y rápido.
 
-Calcula cuánto ahorras si usas este método.
+Calcula cuánto dinero ahorras si usas este método.
