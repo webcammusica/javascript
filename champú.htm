@@ -1,5 +1,6 @@
 <html>
 <head>
+  <link href="webcammusica.css" rel="stylesheet"/>
   <title>Racionar agua</title>
   <script>
     function darDiaChampu()
@@ -39,7 +40,6 @@
       document.formulario.ahorro.value= consTotSinAho - consTotConAho;
     }
 
-
   </script>
 </head>
 <!-- "body" es una etiqueta HMTL donde ubicamos el código que se verá en el navegador -->
@@ -56,8 +56,8 @@
 
     <h2>Problema:</h2>
 
-    <p>El problema del costo del agua se debe principalmente al tiempo que dejamos la ducha abierta, el gasto promedio es de 1 litro,
-    1000 cm cúbicos cada 3 segundos. Veamos un ejemplo:</p>
+    <p>El problema del costo del agua se debe principalmente al tiempo que dejamos la ducha abierta, el gasto promedio es de <b>1 litro,
+    1000 centímetros cúbicos, cada 3 segundos</b>. Veamos un ejemplo:</p>
 
     <p>Una casa tiene unos costos de acueducto y alcantarillado que son:</p>
 
@@ -83,7 +83,7 @@
     <p>Una manera de logralo es mediante el ciclo, secuencia o serie: champú, aseo sin ducha,  ducha, aseo sin ducha, champú.</p>
     <p>Asignándoles números: 1, 3,  2, 3, 1.</p>
     
-    <label for="start">Día inicial tipo 1 o champú:</label>
+    <label for="start">Recordatorio: 19 de julio de 2021.<br> Día inicial tipo 1 o champú:</label>
     <!-- En este caso iniciamos el 19 de julio de 2021-->
     <input type="date" id="start" name="inicioDeAseo"
     value="2021-07-19">
@@ -93,8 +93,8 @@
     value="2021-09-18">
 
     <input type="button" value="Calcular" OnClick="darDiaChampu()"><BR>
-
-    Tipo de aseo para el día buscado=<input type="text" size=10 id="resultado">
+    <label for="resultado">Tipo de aseo para el día buscado = </label>
+    <input type="text" size=10 id="resultado">
 
     <h2>Cuánto ahorrarás</h2>
 
@@ -121,9 +121,11 @@
         <label for="CTCm3">Consumo total en metros cúbicos con ahorro:</label>
         <input type="number" id="CTCm3" name="CTCm3" readonly>
       </div>
-      Cargo total sin ahorro = $<input type="text" size=10 id="totalSin">
-      Cargo total con ahorro = $<input type="text" size=10 id="totalCon">
-      <h2>Ahorro = $<input type="text" size=10 id="ahorro" readonly=""></h2>
+      <label for="totalSin">Cargo total sin ahorro = $</label>
+      <input type="text" size=10 id="totalSin" readonly="">
+      <label for="totalCon">Cargo total con ahorro = $</label>
+      <input type="text" size=10 id="totalCon" readonly="">
+      <h2>Ahorro = $ <input type="text" size=10 id="ahorro" readonly=""></h2>
     </div>
   </form>
 </body>
