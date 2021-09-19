@@ -26,18 +26,20 @@
 
     function calcularAhorro()
     {  
-      var AAc=eval(document.formulario.AAc.value);
-      var AAl=eval(document.formulario.AAl.value);
-      var CF = eval(document.formulario.CF.value);;
+      var m3Ac=eval(document.formulario.m3Ac.value);
+      var m3Al=eval(document.formulario.m3Al.value);
+      var cargoFijo = eval(document.formulario.cargoFijo.value);
       var CTSm3=eval(document.formulario.CTSm3.value);	
-      var CTCm3=eval(document.formulario.CTCm3.value);
-      var consTotSinAho = CTSm3 * (AAc+AAl);	
-      var consTotConAho = CTCm3 * (AAc+AAl);		
-      document.formulario.totalSin.value= CF + consTotSinAho;
-      document.formulario.totalCon.value= CF + consTotConAho;
+      var consTotSinAho = CTSm3 * (m3Ac+m3Al);	
+      var CTCm3 = CTSm3 / 2;
+      var consTotConAho = CTCm3 * (m3Ac+m3Al);  
+      document.formulario.CTCm3.value= CTCm3;		
+      document.formulario.totalSin.value= cargoFijo + consTotSinAho;
+      document.formulario.totalCon.value= cargoFijo + consTotConAho;
       document.formulario.ahorro.value= consTotSinAho - consTotConAho;
-
     }
+
+
   </script>
 </head>
 <!-- "body" es una etiqueta HMTL donde ubicamos el código que se verá en el navegador -->
@@ -46,25 +48,32 @@
   <form name="formulario">
     <h1>Racionar agua</h1>
 
+    <h2>Funcionalidades:</h2>
+
+    <p>Ahorra agua y dúchate menos sin ser desaseado, funciona mejor en casa, si sales y caminas mucho mejor báñate todos los días bien y rápido.</p>
+
+    <p>Calcula cuánto dinero ahorras si usas este método.</p>
+
+    <h2>Problema:</h2>
+
     <p>El problema del costo del agua se debe principalmente al tiempo que dejamos la ducha abierta, el gasto promedio es de 1 litro,
     1000 cm cúbicos cada 3 segundos. Veamos un ejemplo:</p>
 
-
     <p>Una casa tiene unos costos de acueducto y alcantarillado que son:</p>
 
-    <p>- Un cargo fijo de acueducto CFAc de $16294.</p>
+    <p>- Un cargo fijo de acueducto de $16294.</p>
     <p>- Un cargo fijo de alcantarillado $8147.</p>
 
-    <p>- Cada metro cúbico de acueducto, AAc = $2083.26.</p>
-    <p>- Cada metro cúbico de alcantarillado, AAl = $1550.86.</p>
+    <p>- Cada metro cúbico de acueducto, m3Ac = $2083.26.</p>
+    <p>- Cada metro cúbico de alcantarillado, m3Al = $1550.86.</p>
 
     <p>El contador solamente cuenta los litros gastados de acueducto, el prestador del servicio cobra la misma cantidad contada, medida, contabilizada, de metros cúbicos por acueducto que por alcantarillado, le da un enfoque de que toda el agua que entra debe salir, por tanto la factura total es:</p>
 
-    <p>Cargo fijo de acueducto + cargo fijo de alcantarillado + (consumo acueducto)*(AAc+AAl)</p>
+    <p>Cargo fijo de acueducto + cargo fijo de alcantarillado + (consumo acueducto)*(m3Ac+m3Al)</p>
 
     <p>cargoFijoMens = $16294+$8147 = $24441.</p>
 
-    <p>consumoTotal = consumoAcueducto*(AAc+AAl)</p> 
+    <p>consumoTotal = consumoAcueducto*(m3Ac+m3Al)</p> 
 
     <p>cargoTotal = cargoFijoMens + consumoTotal</p> 
 
@@ -92,29 +101,29 @@
     <p>Diligencia los campos de acuerdo a tu factura y oprime clic izquierdo en "Calcular".</p>
     <p>Los valores por defecto son de ejemplo.</p>
     <div>
-      <label for="AAc">Precio por m3 de acueducto AAc: $</label>
-      <input type="number" id="AAc" name="AAc" value=2083.26>
+      <label for="m3Ac">Precio por m3 de acueducto m3Ac: $</label>
+      <input type="number" id="m3Ac" name="m3Ac" value=2083.26>
 
-      <label for="AAl">Precio por m3 de alcantarillado AAl: $</label>
-      <input type="number" id="AAl" name="AAl" value=1550.86>
+      <label for="m3Al">Precio por m3 de alcantarillado m3Al: $</label>
+      <input type="number" id="m3Al" name="m3Al" value=1550.86>
     </div>
 
     <div>
-      <label for="CF">Cargo fijo: $</label>
-      <input type="number" id="CF" name="CF" value=24441>
+      <label for="cargoFijo">Cargo fijo: $</label>
+      <input type="number" id="cargoFijo" name="cargoFijo" value=24441>
       <div>
         <label for="CTSm3">Consumo total en metros cúbicos sin ahorro:</label>
         <input type="number" id="CTSm3" name="CTSm3" value=26.65>
       </div>
 
+      <input type="button" value="Calcular" OnClick="calcularAhorro()"><BR>
       <div>
         <label for="CTCm3">Consumo total en metros cúbicos con ahorro:</label>
-        <input type="number" id="CTCm3" name="CTCm3" value=13.325>
+        <input type="number" id="CTCm3" name="CTCm3" readonly>
       </div>
-      <input type="button" value="Calcular" OnClick="calcularAhorro()"><BR>
       Cargo total sin ahorro = $<input type="text" size=10 id="totalSin">
       Cargo total con ahorro = $<input type="text" size=10 id="totalCon">
-      <h2>Ahorro = $<input type="text" size=10 id="ahorro"></h2>
+      <h2>Ahorro = $<input type="text" size=10 id="ahorro" readonly=""></h2>
     </div>
   </form>
 </body>
