@@ -1,5 +1,7 @@
 # javascript
 
+Para desarrollar y ejecutar los ejercicios solamente necesitas un editor de texto.
+¿Puedo usar mi celular? Si...
 Para desarrollar estos ejercicios recomiendo https://www.sublimetext.com/, porque te permite identar 
 tu código HTML para que se vea ordenado y por ende bonito.
 
