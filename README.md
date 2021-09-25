@@ -41,3 +41,17 @@ champú.htm
 Ahorra agua y dúchate menos sin ser desaseado, funciona mejor en casa, si sales y caminas mucho mejor báñate todos los días bien y rápido.
 
 Calcula cuánto dinero ahorras si usas este método.
+
+
+------------------------------------------------------------------------------------------------------
+2. Escuhar eventos de mouse y teclado.
+
+escucharEvento.html
+------------------------------------------------------------------------------------------------------
+
+Un archivo .html es lo mismo para efectos de estas prácticas que uno .htm.
+
+Este ejercicio permite escuchar cuando el mouse se mueve o se hace clic, o cuando se presiona una tecla
+del teclado, valga la redundancia.
+
+Es útil desde el punto de vista técnico, pero por ahora no es un ejemplo práctico.
