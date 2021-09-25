@@ -1,9 +1,10 @@
 # javascript
 
-Para desarrollar y ejecutar los ejercicios solamente necesitas un editor de texto.
-¿Puedo usar mi celular? Si...
-Para desarrollar estos ejercicios recomiendo https://www.sublimetext.com/, porque te permite identar 
+Para desarrollar y ejecutar los ejercicios solamente necesitas un editor de texto, recomiendo https://www.sublimetext.com/, porque te permite identar 
 tu código HTML para que se vea ordenado y por ende bonito.
+
+¿Puedo usar mi celular? Si...por ahora no te puedo recomendar una aplicación pero sé que existen varias.
+
 
 ------------------------------------------------------------------------------------------------------
 1. Derivada por aproximaciones iterativas por la derecha y la izquierda de la variable independiente.
