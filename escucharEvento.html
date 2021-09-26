@@ -17,8 +17,8 @@ function informacion() {
     case 'mousemove':
       document.getElementById('info').style.backgroundColor = '#FFFFFF';
       /*La siguiente línea permite detectar si el navegador es Microsoft Internet Explorer
-      , esto se hace porque varia de "document.body.scroll..." a 
-      "document.documentElement.scroll..."*/ 
+      , esto se hace porque varia de "evento.client...+document.body.scroll..." o 
+      "evento.client...+document.documentElement.scroll..." a "evento.page..."*/ 
       var ie = navigator.userAgent.toLowerCase().indexOf('msie')!=-1;
       var coordenadaXrelativa, coordenadaYrelativa, coordenadaXabsoluta, coordenadaYabsoluta;
       if(ie) {
