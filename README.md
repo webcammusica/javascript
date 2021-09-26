@@ -5,9 +5,24 @@ tu código HTML para que se vea ordenado y por ende bonito.
 
 ¿Puedo usar mi celular? Si...por ahora no te puedo recomendar una aplicación pero sé que existen varias.
 
+------------------------------------------------------------------------------------------------------
+1. Variables y uso del prompt para recibir interacciones del usuario en JavaScript.
+
+variablesYPrompt.js + invocadorJS.html
+------------------------------------------------------------------------------------------------------
+
+Tipos de variable y cómo manejarlas, operadores, sobreescritura e interacciones con el usuario.
 
 ------------------------------------------------------------------------------------------------------
-1. Derivada por aproximaciones iterativas por la derecha y la izquierda de la variable independiente.
+2. Condicionales o bucles de desición.
+
+condicionales.js + invocadorJS.html
+------------------------------------------------------------------------------------------------------
+
+Comparaciones de contenido y de tipo de variable, if, else, else if, switch y confirm.
+
+------------------------------------------------------------------------------------------------------
+3. Derivada por aproximaciones iterativas por la derecha y la izquierda de la variable independiente.
 
 derivada.htm
 ------------------------------------------------------------------------------------------------------
@@ -34,7 +49,7 @@ https://www.fisicalab.com/apartado/tasa-variacion-media
 
 
 ------------------------------------------------------------------------------------------------------
-2. Ahorrar dinero racionando agua.
+4. Ahorrar dinero racionando agua.
 
 champú.htm
 ------------------------------------------------------------------------------------------------------
@@ -45,7 +60,7 @@ Calcula cuánto dinero ahorras si usas este método.
 
 
 ------------------------------------------------------------------------------------------------------
-2. Escuhar eventos de mouse y teclado.
+5. Escuhar eventos de mouse y teclado.
 
 escucharEvento.html
 ------------------------------------------------------------------------------------------------------
