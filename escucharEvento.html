@@ -16,9 +16,13 @@ function informacion() {
   switch(evento.type) {
     case 'mousemove':
       document.getElementById('info').style.backgroundColor = '#FFFFFF';
+      /*La siguiente línea permite detectar si el navegador es Microsoft Internet Explorer
+      , esto se hace porque varia de "document.body.scroll..." a 
+      "document.documentElement.scroll..."*/ 
       var ie = navigator.userAgent.toLowerCase().indexOf('msie')!=-1;
       var coordenadaXrelativa, coordenadaYrelativa, coordenadaXabsoluta, coordenadaYabsoluta;
       if(ie) {
+        /**/
         if(document.documentElement && document.documentElement.scrollTop){
           coordenadaXabsoluta = evento.clientX + document.documentElement.scrollLeft;
           coordenadaYabsoluta = evento.clientY + document.documentElement.scrollTop;
@@ -28,6 +32,7 @@ function informacion() {
           coordenadaYabsoluta = evento.clientY + document.body.scrollTop;
         }
       }
+      /*Este bloque else, se ejecuta solo si el navegador no es Internet Explorer*/
       else {
         coordenadaXabsoluta = evento.pageX;
         coordenadaYabsoluta = evento.pageY;
