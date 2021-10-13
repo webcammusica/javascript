@@ -92,12 +92,26 @@ function ShowSelected()
 			precioPorMinu = W/1000*precioKWh/60;
 			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
 			break;
+		case 17:
+			W = 56;
+			precioPorMinu = W/1000*precioKWh/60;
+			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
+			break;
 	}
 	 
 	/* Para obtener el texto */
 	var combo = document.getElementById("electrodomesticos");
 	var selected = combo.options[combo.selectedIndex].text;
 
+}
+    
+function Calcular(){
+    
+    var precioKWh = document.getElementById("kwh").value;
+    var W = document.getElementById("watts").value;
+    var precioPorMinu = W/1000*precioKWh/60;
+    document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
+    
 }
 </script>
 
@@ -113,7 +127,8 @@ Selecciona un electrodoméstico:
 	<option value="6">Campana extractora</option>
 	<option value="7">DVD</option> 
 	<option value="8">Lavadora o secadora</option> 
-	<option value="9">Licuadora</option> 
+	<option value="9">Licuadora</option>
+	<option value="17">Laptop</option>
 	<option value="10">Microondas</option>
 	<option value="11">Nevera de 10 pies</option> 
 	<option value="12">Olla arrocera</option> 
@@ -126,6 +141,7 @@ Selecciona un electrodoméstico:
 <!--Pendiente -->
 ¿No está en la lista? introduce la potencia en Vatios (W) de tu electrodoméstico:
 <input id=watts></input>
+<button id=calcular onclick="Calcular()">Calcular</button>
 <br>
 Precio del Kilovatio hora
 <input id=kwh value=635.6880></input>
