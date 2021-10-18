@@ -1,151 +1,163 @@
-<script type="text/javascript">
-function ShowSelected()
-{
+<!DOCTYPE html>
 
-	var cod = 0;
-	/* Para obtener el valor */
-	var cod = parseInt(document.getElementById("electrodomesticos").value);
+<html lang="es">
 
-	
-	var W = 0;
-	var precioKWh = document.getElementById("kwh").value;
-	var precioPorMinu = 0;
+<head>
 
-	switch (cod) {
-		case 1:
-			W = 70;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 2:
-			W = 120;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 3:
-			W = 1200;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 4:
-			W = 13;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 5:
-			W = 1200;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 6:
-			W = 75;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 7:
-			W = 15;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 8:
-			W = 2000;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 9:
-			W = 350;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 10:
-			W = 1000;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 11:
-			W = 190;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 12:
-			W = 500;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 13:
-			W = 1000;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 14:
-			W = 70;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 15:
-			W = 137.5;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 16:
-			W = 175;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-		case 17:
-			W = 56;
-			precioPorMinu = W/1000*precioKWh/60;
-			document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-			break;
-	}
-	 
-	/* Para obtener el texto */
-	var combo = document.getElementById("electrodomesticos");
-	var selected = combo.options[combo.selectedIndex].text;
+	<script type="text/javascript">
+		document.createElement("main");
+		document.createElement("header");
+		document.createElement("footer");
+		document.createElement("section");
+		document.createElement("aside");
+		document.createElement("nav");
+		document.createElement("article");
+		document.createElement("figure");
+	</script>
 
-}
-    
-function Calcular(){
-    
-    var precioKWh = document.getElementById("kwh").value;
-    var W = document.getElementById("watts").value;
-    var precioPorMinu = W/1000*precioKWh/60;
-    document.getElementById('result').innerHTML = precioPorMinu+" pesos por minuto";
-    
-}
-</script>
+	<!-- <script src="miScript.js"></script> -->
 
-Selecciona un electrodoméstico:
+	<link href="miHoja.css" rel="stylesheet" />
 
-<select id="electrodomesticos" name="electrodomesticos" onchange="ShowSelected();" value = 0>
-	<option value="0" selected="selected"></option> 
-	<option value="1">Abanico pedestal</option> 
-	<option value="2">Abanico de techo</option> 
-	<option value="3">Aspiradora</option>
-	<option value="4">Bombillo de 13 vatios (W)</option>
-	<option value="5">Máquina cafetera</option>
-	<option value="6">Campana extractora</option>
-	<option value="7">DVD</option> 
-	<option value="8">Lavadora o secadora</option> 
-	<option value="9">Licuadora</option>
-	<option value="17">Laptop</option>
-	<option value="10">Microondas</option>
-	<option value="11">Nevera de 10 pies</option> 
-	<option value="12">Olla arrocera</option> 
-	<option value="13">Plancha</option> 
-	<option value="14">Televisor a hasta 19 pulgadas</option>
-	<option value="15">Televisor de hasta 32 pulgadas</option>
-	<option value="16">Televisor de hasta 50 pulgadas</option>
-</select>
-<br>
-<!--Pendiente -->
-¿No está en la lista? introduce la potencia en Vatios (W) de tu electrodoméstico:
-<input id=watts></input>
-<button id=calcular onclick="Calcular()">Calcular</button>
-<br>
-Precio del Kilovatio hora
-<input id=kwh value=635.6880></input>
-<br>
-<label id =result value=8></label>
+	<title>Webcam</title>
+	<meta charset="UTF-8" />
+
+	<script type="text/javascript">
+		function ShowSelected()
+		{
+
+			var cod = 0;
+			/* Para obtener el valor */
+			var cod = parseInt(document.getElementById("electrodomesticos").value);
 
 
+			var W = 0;
+			var precioKWh = document.getElementById("kwh").value;
+			var precioPorMinu = 0;
+
+			switch (cod) {
+				case 1:
+				W = 70;
+				break;
+				case 2:
+				W = 120;
+				break;
+				case 3:
+				W = 1200;
+				break;
+				case 4:
+				W = 13;
+				break;
+				case 5:
+				W = 1200;
+				break;
+				case 6:
+				W = 75;
+				break;
+				case 7:
+				W = 15;
+				break;
+				case 8:
+				W = 2000;
+				break;
+				case 9:
+				W = 350;
+				break;
+				case 10:
+				W = 1000;
+				break;
+				case 11:
+				W = 190;
+				break;
+				case 12:
+				W = 500;
+				break;
+				case 13:
+				W = 1000;
+				break;
+				case 14:
+				W = 70;
+				break;
+				case 15:
+				W = 137.5;
+				break;
+				case 16:
+				W = 175;
+				break;
+				case 17:
+				W = 7.8;
+				break;
+			}
+
+			precioPorMinu = W/1000*precioKWh/60;
+			/* Para obtener el texto */
+			var combo = document.getElementById("electrodomesticos");
+			var selected = combo.options[combo.selectedIndex].text;
+			mostrar(precioPorMinu, selected);
+
+		}
+
+		function Calcular(){
+
+			var precioKWh = document.getElementById("kwh").value;
+			var W = document.getElementById("watts").value;
+			var precioPorMinu = W/1000*precioKWh/60;
+			mostrar(precioPorMinu);
+		}
+
+		function mostrar(precioPorMinu, nombreElectr){
+			if(nombreElectr != null){
+				document.getElementById('electrodomestico').innerHTML = nombreElectr;
+			}else{
+				document.getElementById('electrodomestico').innerHTML = "Electrodomestico personalizado";
+			}
+			document.getElementById('result_min').innerHTML = precioPorMinu+" pesos por minuto; ";
+			document.getElementById('result_hor').innerHTML = precioPorMinu*60+" pesos por hora; ";
+			document.getElementById('result_dia').innerHTML = precioPorMinu*3600+" pesos por día";
+		}
+	</script>
+</head>
+
+<body>
+
+	Selecciona un electrodoméstico:
+
+	<select id="electrodomesticos" name="electrodomesticos" onchange="ShowSelected();" value = 0>
+		<option value="0" selected="selected"></option> 
+		<option value="1">Abanico pedestal</option> 
+		<option value="2">Abanico de techo</option> 
+		<option value="3">Aspiradora</option>
+		<option value="4">Bombillo de 13 vatios (W)</option>
+		<option value="5">Máquina cafetera</option>
+		<option value="6">Campana extractora</option>
+		<option value="7">DVD</option> 
+		<option value="8">Lavadora o secadora</option> 
+		<option value="9">Licuadora</option>
+		<option value="17">Laptop</option>
+		<option value="10">Microondas</option>
+		<option value="11">Nevera de 10 pies</option> 
+		<option value="12">Olla arrocera</option> 
+		<option value="13">Plancha</option> 
+		<option value="14">Televisor a hasta 19 pulgadas</option>
+		<option value="15">Televisor de hasta 32 pulgadas</option>
+		<option value="16">Televisor de hasta 50 pulgadas</option>
+	</select>
+	<br>
+	<!--Pendiente -->
+	¿No está en la lista? introduce la potencia en Vatios hora (Wh) de tu electrodoméstico:
+	<input id=watts></input>
+	<button id=calcular onclick="Calcular()">Calcular</button>
+	<br>
+	Precio del Kilovatio hora
+	<input id=kwh value=635.6880></input>
+	<br>
+
+	<div id=salidas>
+		<h2 id=electrodomestico></h2>
+		<label id =result_min value=8></label>
+		<label id =result_hor value=8></label>
+		<label id =result_dia value=8></label>
+	</div>
+
+</body>
+</html>
