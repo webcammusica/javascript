@@ -109,11 +109,11 @@
 			if(nombreElectr != null){
 				document.getElementById('electrodomestico').innerHTML = nombreElectr;
 			}else{
-				document.getElementById('electrodomestico').innerHTML = "Electrodomestico personalizado";
+				document.getElementById('electrodomestico').innerHTML = "Electrodoméstico personalizado";
 			}
 			document.getElementById('result_min').innerHTML = precioPorMinu+" pesos por minuto; ";
 			document.getElementById('result_hor').innerHTML = precioPorMinu*60+" pesos por hora; ";
-			document.getElementById('result_dia').innerHTML = precioPorMinu*3600+" pesos por día";
+			document.getElementById('result_dia').innerHTML = precioPorMinu*3600+" pesos por día.";
 		}
 	</script>
 </head>
@@ -144,7 +144,7 @@
 	</select>
 	<br>
 	<!--Pendiente -->
-	¿No está en la lista? introduce la potencia en Vatios hora (Wh) de tu electrodoméstico:
+	¿No está en la lista? introduce la potencia en vatios hora (Wh) de tu electrodoméstico:
 	<input id=watts></input>
 	<button id=calcular onclick="Calcular()">Calcular</button>
 	<br>
